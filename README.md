@@ -4,8 +4,7 @@
 
 | Screenshot 1 - table showing Gamma data
 |--------------|-----------|
-![](src/Assets/GammaDetail.png)
-
+![](src/Assets/GammaSs.png)
 Kindly follow these steps to run this project
 
 # manufac-assignment
