@@ -1,10 +1,10 @@
 | Screenshot 1 - table showing Flavnoids data
 |--------------|-----------|
-![](Assets/flavnoid.png)
+![](src/Assets/flavnoid.png)
 
 | Screenshot 1 - table showing Gamma data
 |--------------|-----------|
-![](Assets/GammaDetail.png)
+![](src/Assets/GammaDetail.png)
 
 Kindly follow these steps to run this project
 

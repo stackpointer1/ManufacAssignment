@@ -27,12 +27,12 @@ const CreateTable = ( props ) => {
         <tbody>
         {
           Array.from(data.values()).map(value => {
-              const flavanoids = value.map(v => Number(v[itemKey]));
+              const items = value.map(v => Number(v[itemKey]));
               return (
                 <tr>
-                  <td>{getMean(flavanoids)}</td>
-                  <td>{getMedian(flavanoids)}</td>
-                  <td>{getMode(flavanoids).join(' ,')}</td>
+                  <td>{getMean(items)}</td>
+                  <td>{getMedian(items)}</td>
+                  <td>{getMode(items).join(' ,')}</td>
                 </tr>
               );
             }

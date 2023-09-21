@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import CreateTable from './Component/CreateTable';
-import { json } from './Component/Wine-json';
+import json from './Assets/Wine.json';
 
 const ROW = [
-  {type:'measure',displayName : 'Measure'},
-  {type:'mean', displayName: 'item Mean'},
-  {type:'median', displayName: 'item Median'},
-  {type:'mode', displayName: 'item Mode'}
+  { type: 'measure', displayName: 'Measure' },
+  { type: 'mean', displayName: 'item Mean' },
+  { type: 'median', displayName: 'item Median' },
+  { type: 'mode', displayName: 'item Mode' }
 ]
+
 function App() {
-  const [groupedData, setGroupedData] = useState();
-  const [gammaData, setGammaData] = useState()
+  const [groupedData, setGroupedData] = useState(new Map());
+  const [gammaData, setGammaData] = useState([]);
 
   useEffect(
     () => {
@@ -23,13 +24,13 @@ function App() {
   //added gamma to the wineJson
   const insertingGamma = () => {
     const _json = [...json];
-    let _updatedJson = _json.map(item => (
+    const updatedJson = _json.map(item => (
       {
         ...item,
-        gamma: parseFloat(( ( item?.Ash * item?.Hue ) / item?.Magnesium ).toFixed(3))
+        gamma: parseFloat(( ( item.Ash * item.Hue ) / item.Magnesium ).toFixed(3))
       }
     ));
-    setGammaData(groupingOfData(_updatedJson));
+    setGammaData(groupingOfData(updatedJson));
 
   }
   //grouping of data on the basis of Alcohol
@@ -49,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className = 'Flavanoids-table'>
+      <div className='Flavanoids-table'>
         <CreateTable
           data={groupedData}
           itemKey={'Flavanoids'}
@@ -57,10 +58,10 @@ function App() {
             {
               ...item,
               displayName: item.displayName.replace('item', 'Flavanoids')
-            }))}
+            } ))}
         />
       </div>
-      <div className= 'gamma-table'>
+      <div className='gamma-table'>
         <CreateTable
           data={gammaData}
           itemKey={'gamma'}
@@ -68,7 +69,7 @@ function App() {
             {
               ...item,
               displayName: item.displayName.replace('item', 'Gamma')
-            }))}
+            } ))}
         />
       </div>
     </div>
