@@ -45,5 +45,8 @@ export const getMode = ( arr ) => {
       modes.push(elem)
     }
   }
+  if (maxFreq === 1) {
+    modes = [];
+  }
   return modes
 }
