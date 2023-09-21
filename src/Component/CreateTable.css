@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    --border-color:gray;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.table-container{
+    --size:126px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.table-container .side-data{
+    border-top: 1px solid var(--border-color);
+    width:var(--size);
+}
+.table-container .side-data-items {
+    font-size: 14px;
+    padding: 11.3px 10px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.table-container table{
+    width: calc(100% - var(--size));
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+
+.table-container table thead > tr > th,
+.table-container table tbody > tr > td{
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    width: 33.33%;
+}
+
+.gamma-table table thead > tr > th{
+    white-space: nowrap;
+}
+
+.gamma-table .side-data{
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gamma-table .side-data .side-data-items:last-child{
+    border: 0px;
+}
