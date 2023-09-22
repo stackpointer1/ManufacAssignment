@@ -1,10 +1,9 @@
 | Screenshot 1 - table showing Flavnoids data
 |--------------|-----------|
-![](src/Assets/flavnoid.png)
-
+![](src/Assets/FlavnoidUpdated.png)
 | Screenshot 1 - table showing Gamma data
 |--------------|-----------|
-![](src/Assets/GammaSs.png)
+![](src/Assets/updatedGamma.png)
 Kindly follow these steps to run this project
 
 # manufac-assignment
