@@ -27,7 +27,7 @@ function App() {
     const updatedJson = _json.map(item => (
       {
         ...item,
-        gamma: parseFloat(( ( item.Ash * item.Hue ) / item.Magnesium ).toFixed(3))
+        gamma: ( item.Ash * item.Hue ) / item.Magnesium
       }
     ));
     setGammaData(groupingOfData(updatedJson));

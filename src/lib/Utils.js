@@ -19,9 +19,9 @@ export const getMedian = ( data ) => {
   if (data.length % 2 === 0) {
     let mid1 = _data[_data.length / 2 - 1];
     const mid2 = _data[_data.length / 2];
-    return ( mid1 + mid2 ) / 2
+    return (( mid1 + mid2 ) / 2).toFixed(3)
   } else {
-    return _data[Math.floor(_data.length / 2)];
+    return (_data[Math.floor(_data.length / 2)]).toFixed(3);
   }
 }
 

@@ -25,19 +25,21 @@ const CreateTable = ( props ) => {
         </tr>
         </thead>
         <tbody>
-        {
-          Array.from(data.values()).map(value => {
-              const items = value.map(v => Number(v[itemKey]));
-              return (
-                <tr>
-                  <td>{getMean(items)}</td>
-                  <td>{getMedian(items)}</td>
-                  <td>{getMode(items).join(' ,')}</td>
-                </tr>
-              );
-            }
-          )
-        }
+        <Row
+          data={Array.from(data.values())}
+          calculate={getMean}
+          itemKey={itemKey}
+        />
+        <Row
+          data={Array.from(data.values())}
+          calculate={getMedian}
+          itemKey={itemKey}
+        />
+        <Row
+          data={Array.from(data.values())}
+          calculate={getMode}
+          itemKey={itemKey}
+        />
         </tbody>
       </table>
     </div>
@@ -45,3 +47,23 @@ const CreateTable = ( props ) => {
 }
 export default CreateTable
 
+
+/**
+ * showing row
+ * @param {array} data
+ * @param{function} calculate
+ * @param{string} itemKey
+ */
+function Row( { data, calculate, itemKey } ) {
+  return (
+    <tr>
+      {
+        data.map(value => {
+            const items = value.map(v => Number(v[itemKey]));
+            return <td>{calculate(items)}</td>;
+          }
+        )
+      }
+    </tr>
+  );
+}
